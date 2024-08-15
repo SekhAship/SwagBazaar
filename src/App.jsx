@@ -9,6 +9,7 @@ import Cart from "./pages/cart/Cart";
 import Dashboard from "./pages/admin/dashbboard/Dashboard";
 import NoPage from "./pages/noPage/NoPage";
 import MyState from "./context/data/myState";
+import ProductInfo from "./pages/productInfo/ProductInfo";
 
 
 const App = () => {
@@ -21,6 +22,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/order" element={<Order/>} />
+          <Route path="/productinfo" element={<ProductInfo/>} />
+          
           <Route path="/cart" element={<Cart/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/*" element={<NoPage/>} />
