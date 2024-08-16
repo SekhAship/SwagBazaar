@@ -11,8 +11,8 @@ import Testimonial from '../../components/testimonial/Testimonial';
 
 const Home = () => {
   const context=useContext(MyContext);
-  console.log(context)
-  const {name,roll}=context;
+  // console.log(context)
+  const {name}=context;
 
   return (
     <div>
@@ -22,7 +22,8 @@ const Home = () => {
         <HomePageProductCard/>
         <Track/>
         <Testimonial/>
-        <Filter/>
+        {name}
+        {/* <Filter/> */}
        </Layout>
     </div>
   )
