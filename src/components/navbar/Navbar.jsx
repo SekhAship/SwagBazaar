@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
+import { useSelector } from "react-redux";
 
 
 const Navbar = () => {
@@ -8,6 +9,8 @@ const Navbar = () => {
 
     // navigate 
     const navigate = useNavigate();
+    //cart item
+    const cartItem = useSelector((state) => state.cart);
 
     // logout function 
     const logout = () => {
@@ -55,8 +58,8 @@ const Navbar = () => {
 
             {/* Cart */}
             <li>
-                <Link to={'/cart'}>
-                    Cart(0)
+                <Link to={'/cartpage'}>
+                    Cart({cartItem.length})
                 </Link>
             </li>
         </ul>

@@ -21,6 +21,7 @@ import { Toaster } from "react-hot-toast";
 import { ProtectedRouteForUser } from "./protectedRoute/ProtectedRouteForUser";
 import { ProtectedRouteForAdmin } from "./protectedRoute/ProtectedRouteForAdmin";
 import CategoryPage from "./pages/category/CategoryPage";
+import BuyNowModal from "./components/buyNowModal/BuyNowModal";
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           <Toaster/>
 
         <Routes>
+        <Route path="/buynow" element={<BuyNowModal/>} />
           <Route path="/" element={<Home/>} />
           <Route path="/order" element={<Order/>} />
           <Route path="/productinfo/:id" element={<ProductInfo/>} />
