@@ -5,7 +5,7 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 
-const BuyNowModal = () => {
+const BuyNowModal = ({addressInfo,setAddressInfo,buyNowFunction}) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(!open);
@@ -24,6 +24,8 @@ const BuyNowModal = () => {
                       <input
                           type="text"
                           name="name"
+                          value={addressInfo.name}
+                          onChange={(e) => setAddressInfo({ ...addressInfo, name: e.target.value })}
                           placeholder='Enter your name'
                           className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                       />
@@ -32,6 +34,8 @@ const BuyNowModal = () => {
                       <input
                           type="text"
                           name="address"
+                          value={addressInfo.address}
+                          onChange={(e) => setAddressInfo({ ...addressInfo, address: e.target.value })}
                           placeholder='Enter your address'
                           className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                       />
@@ -41,6 +45,8 @@ const BuyNowModal = () => {
                       <input
                           type="number"
                           name="pincode"
+                          value={addressInfo.pincode}
+                          onChange={(e) => setAddressInfo({ ...addressInfo, pincode: e.target.value })}
                           placeholder='Enter your pincode'
                           className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                       />
@@ -50,6 +56,8 @@ const BuyNowModal = () => {
                       <input
                           type="text"
                           name="mobileNumber"
+                          value={addressInfo.mobileNumber}
+                          onChange={(e) => setAddressInfo({ ...addressInfo, mobileNumber: e.target.value })}
                           placeholder='Enter your mobileNumber'
                           className='bg-pink-50 border border-pink-200 px-2 py-2 w-full rounded-md outline-none text-pink-600 placeholder-pink-300'
                       />
@@ -58,7 +66,11 @@ const BuyNowModal = () => {
                   <div className="">
                   <Button
               type="button"
-              onClick={handleOpen}
+              onClick={() => {
+                  buyNowFunction();
+                  handleOpen();
+              }
+              }
               className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 rounded-lg"
           >
               Buy now
