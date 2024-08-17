@@ -6,12 +6,15 @@ import UserDetail from '../../../components/admin/UserDetail';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import MyContext from '../../../context/data/myContext';
+import Layout from '../../../components/layout/Layout';
 const AdminDashboard = () => {
     const user = JSON.parse(localStorage.getItem('users'));
     const context=useContext(MyContext)
     const {getAllProduct,getAllOrder,getAllUser}=context
     // console.log(getAllOrder.length)
     return (
+        <Layout>
+
         <div>
             {/* Top */}
             <div className="top mb-5 px-5 mt-5">
@@ -168,6 +171,7 @@ const AdminDashboard = () => {
                 </div>
             </div>
         </div>
+        </Layout>
     );
 }
 

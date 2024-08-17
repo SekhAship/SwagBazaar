@@ -1,23 +1,25 @@
 import { useContext, useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import myContext from "../../context/data/myContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { fireDB } from "../../firebase/FirebaseConfig";
 import { Loader } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { addtoCart, deleteFromCart } from "../../redux/CartSlice";
+
 import toast from "react-hot-toast";
+import { addtoCart, deleteFromCart } from "../../redux/cartSlice";
 const ProductInfo = () => {
+    const navigate=useNavigate();
     const context = useContext(myContext);
     const { loading, setLoading } = context;
 
     const [product, setProduct] = useState('')
-    console.log(product)
+    // console.log(product)
 
     const { id } = useParams()
 
-    console.log(product)
+    // console.log(product)
 
     // getProductData
     const getProductData = async () => {
@@ -180,6 +182,7 @@ const ProductInfo = () => {
                                         </div>
                                         <div className="flex gap-4 mb-6">
                                             <button
+                                                onClick={() => navigate('/cartpage')}
                                                 className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100 rounded-xl"
                                             >
                                                 Buy Now
