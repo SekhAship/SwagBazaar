@@ -3,7 +3,8 @@ import { useNavigate } from "react-router";
 import myContext from "../../context/data/myContext";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
-import { addtoCart, deleteFromCart } from "../../redux/CartSlice";
+import { addtoCart, deleteFromCart } from "../../redux/cartSlice";
+// import { addtoCart, deleteFromCart } from "../../redux/CartSlice";
 
 
 

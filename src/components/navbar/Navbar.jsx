@@ -71,7 +71,7 @@ const Navbar = () => {
                 {/* left  */}
                 <div className="left py-3 lg:py-0">
                     <Link to={'/'}>
-                        <h2 className=" font-bold text-white text-2xl text-center">E-Bharat</h2>
+                        <h2 className=" font-bold text-white text-2xl text-center">SwagBazaar</h2>
                     </Link>
                 </div>
 

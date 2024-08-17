@@ -21,9 +21,9 @@ const Home = () => {
         <Category/>
         <HomePageProductCard/>
         <Track/>
-        <Testimonial/>
-        {name}
-        {/* <Filter/> */}
+        
+        
+        
        </Layout>
     </div>
   )
